@@ -19,11 +19,12 @@ public class DemoApplication implements CommandLineRunner {
 	}
 	@Override
 	public void run(String @NonNull ... args) throws Exception{
-		User existingUser = userRepo.findByEmail("john@gmail.com");
+		String emailTest="alex123@gmail.com";
+		User existingUser = userRepo.findByEmail(emailTest);
 		if(existingUser==null) {
 			String simplePassword = "parola1";
 			String hashedPassword = hashString(simplePassword, "SHA-256");
-			User userTest = new User("John", "john1@gmail.com", hashedPassword);
+			User userTest = new User("Alex", emailTest, hashedPassword);
 			userRepo.save(userTest);
 			System.out.println("user saved in data base");
 		}else{
