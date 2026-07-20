@@ -1,12 +1,13 @@
 package com.example.demo;
 
+import com.example.demo.domain.model.User;
+import com.example.demo.domain.repo.UserRepo;
 import org.jspecify.annotations.NonNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import javax.management.Query;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
