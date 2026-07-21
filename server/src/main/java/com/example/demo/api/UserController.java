@@ -19,6 +19,11 @@ public class UserController {
     public List<User> fetchAllUsers(){
         return userService.getAllUsers();
     }
+    @PostMapping("/add")
+    public ResponseEntity<User> createUser(@RequestBody User user) {
+        User savedUser = userService.createUser(user);
+        return ResponseEntity.ok(savedUser);
+    }
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<String> deleteUser(@PathVariable String id) {
         userService.deleteUser(id);
